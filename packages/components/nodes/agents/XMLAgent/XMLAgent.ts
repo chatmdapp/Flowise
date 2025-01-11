@@ -57,7 +57,6 @@ class XMLAgent_Agents implements INode {
     baseClasses: string[]
     inputs: INodeParams[]
     sessionId?: string
-    badge?: string
 
     constructor(fields?: { sessionId?: string }) {
         this.label = 'XML Agent'
@@ -277,7 +276,7 @@ const prepareAgent = async (
         chatId: flowObj?.chatId,
         input: flowObj?.input,
         isXML: true,
-        verbose: process.env.DEBUG === 'true' ? true : false,
+        verbose: process.env.DEBUG === 'true',
         maxIterations: maxIterations ? parseFloat(maxIterations) : undefined
     })
 
